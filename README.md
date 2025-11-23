@@ -24,61 +24,14 @@ selection buffer.
 
 The `easy-theme-preview-mode` buffer uses the following keybindings:
 
-<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
-
-
-<colgroup>
-<col  class="org-left" />
-
-<col  class="org-left" />
-
-<col  class="org-left" />
-</colgroup>
-<thead>
-<tr>
-<th scope="col" class="org-left">Key</th>
-<th scope="col" class="org-left">Action</th>
-<th scope="col" class="org-left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="org-left"><code>RET</code></td>
-<td class="org-left">`select`</td>
-<td class="org-left">Toggle the selected theme (load/disable).</td>
-</tr>
-
-<tr>
-<td class="org-left"><code>d</code></td>
-<td class="org-left">`describe`</td>
-<td class="org-left">Show the documentation for the theme or its package.</td>
-</tr>
-
-<tr>
-<td class="org-left"><code>f</code></td>
-<td class="org-left">`filter`</td>
-<td class="org-left">Cycle filter: All -&gt; Dark -&gt; Light -&gt; All.</td>
-</tr>
-
-<tr>
-<td class="org-left"><code>g</code></td>
-<td class="org-left">`refresh`</td>
-<td class="org-left">Refresh buffer</td>
-</tr>
-
-<tr>
-<td class="org-left"><code>q</code></td>
-<td class="org-left">`quit`</td>
-<td class="org-left">Close buffer</td>
-</tr>
-
-<tr>
-<td class="org-left"><code>h</code>, <code>?</code></td>
-<td class="org-left">`help`</td>
-<td class="org-left">Show a quick help message in the echo area.</td>
-</tr>
-</tbody>
-</table>
+| Key      | Action     | Description                                          |
+|----------|------------|------------------------------------------------------|
+| `RET`    | `select`   | Toggle the selected theme (load/disable).            |
+| `d`      | `describe` | Show the documentation for the theme or its package. |
+| `f`      | `filter`   | Cycle filter: All -> Dark -> Light -> All.           |
+| `g`      | `refresh`  | Refresh buffer                                       |
+| `q`      | `quit`     | Close buffer                                         |
+| `h`, `?` | `help`     | Show a quick help message in the echo area.          |
 
 
 # License
