@@ -171,10 +171,9 @@
     
     (setq tabulated-list-entries (nreverse entries))
     (tabulated-list-print t)))
-
 (defun easy-theme-preview-command (action)
-  "Main command dispatcher for easy-theme-preview-mode.
-ACTION is a symbol: select, describe, filter, help, or refresh."
+  "Main command dispatcher for `easy-theme-preview-mode'.
+ACTION is a symbol: `select', `describe', `filter', `help', or `refresh'."
   (interactive "aAction: ") ; Makes it interactive, though argument is usually passed by the keymap lambda
   (pcase action
     ('select (easy-theme-preview--select))
