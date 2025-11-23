@@ -1,14 +1,46 @@
 ;;; easy-theme-preview.el --- Easily preview themes  -*- lexical-binding: t; -*-
 
+;; Copyright (C) 2025 Ayush Jha (ayys AT duck DOT com)
+
 ;; Package: easy-theme-preview
 ;; Version: 1.0
 ;; Author: Ayush Jha <ayys@duck.com>
 ;; URL: https://git.sr.ht/~ayys/theme-preview-mode.el
 ;; Keywords: theme, faces, convenience, utility, tabulated-list
-;; Requires: tabulated-list, package
+;; Package-Requires: ((emacs "24.3"))
 ;; License: GPL-3.0-or-later
 ;; Coding: utf-8
+
+;; This file is not part of GNU Emacs.
+
+;; This is free software; you can redistribute it and/or modify it under
+;; the terms of the GNU General Public License as published by the Free
+;; Software Foundation; either version 3, or (at your option) any later
+;; version.
+
+;; This is distributed in the hope that it will be useful, but WITHOUT
+;; ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+;; FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
+;; for more details.
+
+;; You should have received a copy of the GNU General Public License
+;; along with GNU Emacs; see the file COPYING.  If not, write to the
+;; Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+;; MA 02110-1301 USA.
+
+
+;;; Commentary:
+
+;; easy-theme-preview is a simple package to easily preview and set
+;; themes from a tabulated list inside Emacs.
+;; 
+;; Users with alot of installed themes can quickly browse through them to
+;; find the one they want.
+;; It requires Emacs 24.3.
+;; Enable it by calling `easy-theme-preview'.
+
 ;;; Code:
+
 
 (require 'tabulated-list)
 (require 'package)
@@ -23,13 +55,7 @@
   :group 'easy-theme-preview)
 
 (defvar-local easy-theme-preview--filter-type nil
-  "Current filter state. Can be nil (all), 'light, or 'dark.")
-
-(declare-function easy-theme-preview--quick-help "easy-theme-preview" ())
-(declare-function easy-theme-preview--select "easy-theme-preview" ())
-(declare-function easy-theme-preview--describe "easy-theme-preview" ())
-(declare-function easy-theme-preview--cycle-filter "easy-theme-preview" ())
-
+  "Current filter state. Can be nil (all), light, or dark.")
 
 (defvar easy-theme-preview-mode-map
   (let ((map (make-sparse-keymap)))
@@ -61,7 +87,7 @@
     (if doc (car (split-string doc "\n")) "")))
 
 (defun easy-theme-preview--guess-variant (theme)
-  "Guess if THEME is 'light or 'dark based on name and description."
+  "Guess if THEME is light or dark based on name and description."
   (let* ((desc (easy-theme-preview--get-desc theme))
          (text (concat (symbol-name theme) " " (downcase desc))))
     (cond
@@ -149,7 +175,7 @@
 
 (defun easy-theme-preview-command (action)
   "Main command dispatcher for easy-theme-preview-mode.
-ACTION is a symbol: 'select, 'describe, 'filter, 'help, or 'refresh."
+ACTION is a symbol: select, describe, filter, help, or refresh."
   (interactive "aAction: ") ; Makes it interactive, though argument is usually passed by the keymap lambda
   (pcase action
     ('select (easy-theme-preview--select))
@@ -171,3 +197,4 @@ ACTION is a symbol: 'select, 'describe, 'filter, 'help, or 'refresh."
     (easy-theme-preview--quick-help)))
 
 (provide 'easy-theme-preview)
+;;; easy-theme-preview.el ends here
