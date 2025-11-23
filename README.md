@@ -14,6 +14,8 @@ and adding the following to your configuration:
 
     (require 'easy-theme-preview)
 
+The PR for getting this merged to Melpa is [here](https://github.com/melpa/melpa/pull/9701).
+
 
 # Usage
 
