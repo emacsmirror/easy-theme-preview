@@ -2,21 +2,43 @@
 #+author: Ayush Jha
 #+language: English
 #+email: ayys@duck.com
+#+keywords: emacs, theme, preview, utility
 
+[[https://git.sr.ht/~ayys/theme-preview-mode.el][`easy-theme-preview`]] is an Emacs Lisp package that provides a simple,
+interactive buffer for browsing, and previewing Emacs themes
+using a *tabulated-list* interface.
 
-* Basics
+You can also install new themes, then press "g" to refresh the buffer.
 
-Provides a buffer with a list of all your themes, which you can then
-try out quite easily.
+* Installation
 
-You can also install new themes, then press "g" to refresh the
-buffer.
+This package is not currently available on MELPA, but you can manually
+install it by placing `easy-theme-preview.el` in your Emacs load path
+and adding the following to your configuration:
 
-* Key bindings in =easy-theme-preview-mode=
+#+begin_src emacs-lisp
+  (require 'easy-theme-preview)
+#+end_src
 
-| Key binding | Description                    |
-| g           | refresh theme list             |
-| a           | Apply theme at point           |
-| A           | Apply on top of existing theme |
-| r           | unload all themes              |
-| R          | unload theme at point          |
+* Usage
+
+Execute the command `M-x easy-theme-preview` to open the theme
+selection buffer.
+
+* Keybindings
+
+The `easy-theme-preview-mode` buffer uses the following keybindings:
+
+| Key      | Action     | Description                                          |
+|----------+------------+------------------------------------------------------|
+| ~RET~    | `select`   | Toggle the selected theme (load/disable).            |
+| ~d~      | `describe` | Show the documentation for the theme or its package. |
+| ~f~      | `filter`   | Cycle filter: All -> Dark -> Light -> All.           |
+| ~g~      | `refresh`  | Refresh buffer                                       |
+| ~q~      | `quit`     | Close buffer                                         |
+| ~h~, ~?~ | `help`     | Show a quick help message in the echo area.          |
+
+* License
+
+GPL-3.0-or-later
+
