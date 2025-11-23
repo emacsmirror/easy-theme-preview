@@ -4,7 +4,7 @@ using a **tabulated-list** interface.
 
 You can also install new themes, then press "g" to refresh the buffer.
 
-![](https://github.com/ayys/easy-theme-preview.el/blob/master/assets/demo.gif)
+![](https://raw.githubusercontent.com/ayys/easy-theme-preview.el/refs/heads/master/assets/demo.gif)
 
 # Installation
 
